@@ -14,11 +14,11 @@ exports.adminLogin = async(req,res)=>{
         return res.render('login',{msg:"Incorrect Username or Password"})
     }
     // return res.render('home')
-    res.cookie('Admin',admin,{httpOnly:true}).redirect('/admin') // generate cookie and redirect to next page after proper authentication don't render
+    res.cookie('admin',admin,{httpOnly:true}).redirect('/admin') // generate cookie and redirect to next page after proper authentication don't render
 
 }
 
-exports.adminLogout = (req,res) => res.clearCookie('Admin').redirect('/admin/login') // if clearCookie is not working use res.cookie('Admin',null)
+exports.adminLogout = (req,res) => res.clearCookie('admin').redirect('/admin/login') // if clearCookie is not working use res.cookie('Admin',null)
 
 
 
